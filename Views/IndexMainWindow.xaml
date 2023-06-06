@@ -11,7 +11,25 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockLargeBold}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockLarge}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockTitleBold}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockTitle}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockSubTitleBold}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockSubTitle}"/>
+
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultBold}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefault}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultAccent}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultSecLight}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultThiLight}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultPrimary}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultDanger}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultWarning}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultInfo}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="{Binding Title}" Style="{StaticResource TextBlockDefaultSuccess}"/>
+        </StackPanel>
         <TextBlock Text="Hello，World!" Grid.Row="0"/>
-        <TextBlock Text="{Binding Title}" Grid.Row="1"/>
     </Grid>
 </Window>
