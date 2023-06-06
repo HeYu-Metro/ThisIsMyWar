@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using ThisIsMyWar.Views;
 
 namespace ThisIsMyWar
 {
@@ -17,7 +18,7 @@ namespace ThisIsMyWar
     {
         protected override Window CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            return Container.Resolve<IndexMainWindow>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
