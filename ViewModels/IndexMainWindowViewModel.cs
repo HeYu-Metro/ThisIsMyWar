@@ -22,12 +22,28 @@ namespace ThisIsMyWar.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { SetProperty(ref name, value); }
+        }
         private ModelData dbConnection;
         public IndexMainWindowViewModel()
         {
             dbConnection = new ModelData();
-            Add();
-            Get();
+
+            //加解密
+            string plainText = "Hello, World!";
+            byte[] key = Encoding.UTF8.GetBytes("0123456789abcdef"); // 128-bit key
+            byte[] iv = Encoding.UTF8.GetBytes("1234567890abcdef"); // 128-bit IV
+
+            byte[] encrypted = Encryption.Encrypt(plainText, key, iv);
+            Title = Convert.ToBase64String(encrypted);
+
+            string decrypted = Encryption.Decrypt(encrypted, key, iv);
+            Name = decrypted;
+
         }
         //查询
         public void Get()
