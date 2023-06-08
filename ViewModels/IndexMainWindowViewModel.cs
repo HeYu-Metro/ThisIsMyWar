@@ -35,8 +35,8 @@ namespace ThisIsMyWar.ViewModels
 
             //加解密
             string plainText = "Hello, World!";
-            byte[] key = Encoding.UTF8.GetBytes("0123456789abcdef"); // 128-bit key
-            byte[] iv = Encoding.UTF8.GetBytes("1234567890abcdef"); // 128-bit IV
+            byte[] key = Encoding.UTF8.GetBytes("123niushc784jldr"); // 128-bit key
+            byte[] iv = Encoding.UTF8.GetBytes("123niushc784jldr"); // 128-bit IV
 
             byte[] encrypted = Encryption.Encrypt(plainText, key, iv);
             Title = Convert.ToBase64String(encrypted);
