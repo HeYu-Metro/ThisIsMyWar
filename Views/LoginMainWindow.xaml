@@ -1,0 +1,57 @@
+﻿<Window x:Class="ThisIsMyWar.Views.LoginMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:ThisIsMyWar.Views"
+        mc:Ignorable="d"
+        Title="LoginMainWindow" Height="450" Width="500">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="White">
+            <Image Grid.Row="0"/>
+        </Border>
+        <hc:TextBox  Style="{StaticResource TextBoxExtend}" 
+                     hc:InfoElement.TitlePlacement="Left" 
+                     hc:TitleElement.HorizontalAlignment="Center" 
+                     hc:InfoElement.Title="用户名：" 
+                     hc:InfoElement.Placeholder="请输入用户名" 
+                     FontSize="20"
+                     hc:InfoElement.TitleWidth="100" 
+                     Width="400" 
+                     VerticalAlignment="Center" 
+                     Grid.Row="1"/>
+        <hc:PasswordBox ShowClearButton="True" 
+                        hc:InfoElement.TitlePlacement="Left" 
+                        hc:TitleElement.HorizontalAlignment="Center" 
+                        hc:InfoElement.Title="密码：" 
+                        hc:InfoElement.Placeholder="请输入密码" 
+                        FontSize="20"
+                        hc:InfoElement.TitleWidth="100" 
+                        Width="400" 
+                        VerticalAlignment="Center" 
+                        Grid.Row="2"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="注册" 
+                    Margin="10"  
+                    Width="100"
+                    Height="50"
+                    FontSize="16"
+                    hc:BorderElement.CornerRadius="25"/>
+            <Button Content="登录" 
+                    Margin="10"  
+                    Width="100"
+                    Height="50"
+                    FontSize="16"
+                    hc:BorderElement.CornerRadius="25"/>
+        </StackPanel>
+        <TextBlock Text="忘记密码请联系管理员" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20"/>
+    </Grid>
+</Window>
