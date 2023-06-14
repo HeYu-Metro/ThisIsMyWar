@@ -29,6 +29,12 @@ namespace ThisIsMyWar.ViewModels
             get { return name; }
             set { SetProperty(ref name, value); }
         }
+        private string code;
+        public string Code
+        {
+            get { return code; }
+            set { SetProperty(ref code, value); }
+        }
         private ModelData dbConnection;
         public IndexMainWindowViewModel()
         {
@@ -44,18 +50,22 @@ namespace ThisIsMyWar.ViewModels
 
             string decrypted = Encryption.Decrypt(encrypted, key, iv);
             Name = decrypted;
+
+            var var1 = new Message();
+            Code = var1.Code();
             //接收人
             string email = "1799508868@qq.com";
             string subject = "验证码";
-            string body = "验证码是123456";
+            string body = $"验证码是{Code}";
             //发送人
             string smtpServer = "smtp.qq.com";
             int smtpPort = 587;
             string senderEmail = "3069448871@qq.com";
             string senderPassword = "frjfhvhzfarsdgej";
             //发送邮件
-            var var = new EmailSender(smtpServer,smtpPort,senderEmail,senderPassword);
-            var.SendEmail(email,subject,body);
+            var var = new EmailSender(smtpServer, smtpPort, senderEmail, senderPassword);
+            var.SendEmail(email, subject, body);
+
         }
         //查询
         public void Get()

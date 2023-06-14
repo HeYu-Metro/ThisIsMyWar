@@ -37,7 +37,6 @@ namespace ThisIsMyWar.COM
                         smtpClient.Send(mailMessage);
                     }
                 }
-
                 Console.WriteLine("Email sent successfully.");
             }
             catch (Exception ex)

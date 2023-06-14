@@ -52,6 +52,6 @@
                     FontSize="16"
                     hc:BorderElement.CornerRadius="25"/>
         </StackPanel>
-        <TextBlock Text="忘记密码请联系管理员" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20"/>
+        <hc:RunningBlock Content="欢迎来到" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Width="500"/>
     </Grid>
 </Window>
