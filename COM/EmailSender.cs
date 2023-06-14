@@ -6,6 +6,7 @@ namespace ThisIsMyWar.COM
 {
     public class EmailSender
     {
+        //发送邮件
         private string smtpServer;
         private int smtpPort;
         private string senderEmail;

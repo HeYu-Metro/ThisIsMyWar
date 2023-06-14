@@ -44,15 +44,16 @@ namespace ThisIsMyWar.ViewModels
 
             string decrypted = Encryption.Decrypt(encrypted, key, iv);
             Name = decrypted;
-
+            //接收人
             string email = "1799508868@qq.com";
             string subject = "验证码";
             string body = "验证码是123456";
-
+            //发送人
             string smtpServer = "smtp.qq.com";
             int smtpPort = 587;
             string senderEmail = "3069448871@qq.com";
             string senderPassword = "frjfhvhzfarsdgej";
+            //发送邮件
             var var = new EmailSender(smtpServer,smtpPort,senderEmail,senderPassword);
             var.SendEmail(email,subject,body);
         }
