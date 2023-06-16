@@ -42,15 +42,13 @@ namespace ThisIsMyWar.ViewModels
 
             //加解密
             string plainText = "Hello, World!";
-            byte[] key = Encoding.UTF8.GetBytes("0123456789abcdef"); // 128-bit key
-            byte[] iv = Encoding.UTF8.GetBytes("1234567890abcdef"); // 128-bit IV
 
-            byte[] encrypted = Encryption.Encrypt(plainText, key, iv);
+            byte[] encrypted = Encryption.Encrypt(plainText);
             Title = Convert.ToBase64String(encrypted);
 
-            string decrypted = Encryption.Decrypt(encrypted, key, iv);
+            string decrypted = Encryption.Decrypt(encrypted);
             Name = decrypted;
-
+            //验证码
             var var1 = new Message();
             Code = var1.Code();
             //接收人
@@ -63,9 +61,8 @@ namespace ThisIsMyWar.ViewModels
             string senderEmail = "3069448871@qq.com";
             string senderPassword = "frjfhvhzfarsdgej";
             //发送邮件
-            var var = new EmailSender(smtpServer, smtpPort, senderEmail, senderPassword);
+            var var = new EmailSender();
             var.SendEmail(email, subject, body);
-
         }
         //查询
         public void Get()

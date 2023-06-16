@@ -12,12 +12,12 @@ namespace ThisIsMyWar.COM
         private string senderEmail;
         private string senderPassword;
 
-        public EmailSender(string smtpServer, int smtpPort, string senderEmail, string senderPassword)
+        public EmailSender()
         {
-            this.smtpServer = smtpServer;
-            this.smtpPort = smtpPort;
-            this.senderEmail = senderEmail;
-            this.senderPassword = senderPassword;
+            this.smtpServer = "smtp.qq.com";
+            this.smtpPort =587;
+            this.senderEmail = "3069448871@qq.com";
+            this.senderPassword = "frjfhvhzfarsdgej";
         }
 
         public void SendEmail(string recipientEmail, string subject, string body)
@@ -37,11 +37,9 @@ namespace ThisIsMyWar.COM
                         smtpClient.Send(mailMessage);
                     }
                 }
-                Console.WriteLine("Email sent successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Failed to send email. Error message: " + ex.Message);
             }
         }
     }

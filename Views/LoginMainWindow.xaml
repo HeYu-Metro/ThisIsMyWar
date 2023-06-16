@@ -6,52 +6,39 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:ThisIsMyWar.Views"
         mc:Ignorable="d"
-        Title="LoginMainWindow" Height="450" Width="500">
-    <Grid Background="White">
+        Title="LoginMainWindow" Height="600" Width="960">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="White">
-            <Image Grid.Row="0"/>
-        </Border>
-        <hc:TextBox  Style="{StaticResource TextBoxExtend}" 
-                     hc:InfoElement.TitlePlacement="Left" 
-                     hc:TitleElement.HorizontalAlignment="Center" 
-                     hc:InfoElement.Title="用户名：" 
-                     hc:InfoElement.Placeholder="请输入用户名" 
-                     FontSize="20"
-                     hc:InfoElement.TitleWidth="100" 
-                     Width="400" 
-                     VerticalAlignment="Center" 
-                     Grid.Row="1"/>
-        <hc:PasswordBox ShowClearButton="True" 
-                        hc:InfoElement.TitlePlacement="Left" 
-                        hc:TitleElement.HorizontalAlignment="Center" 
-                        hc:InfoElement.Title="密码：" 
-                        hc:InfoElement.Placeholder="请输入密码" 
-                        FontSize="20"
-                        hc:InfoElement.TitleWidth="100" 
-                        Width="400" 
-                        VerticalAlignment="Center" 
-                        Grid.Row="2"/>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="注册" 
-                    Margin="10"  
-                    Width="100"
-                    Height="50"
-                    FontSize="16"
-                    hc:BorderElement.CornerRadius="25"/>
-            <Button Content="登录" 
-                    Margin="10"  
-                    Width="100"
-                    Height="50"
-                    FontSize="16"
-                    hc:BorderElement.CornerRadius="25"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="登录" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <hc:TextBox hc:TitleElement.VerticalAlignment="Center" hc:TitleElement.HorizontalAlignment="Left" hc:TitleElement.Title="用户名" hc:InfoElement.Placeholder="请输入用户名" hc:InfoElement.TitleWidth="120" hc:InfoElement.TitlePlacement="Left" Text="{Binding UserName,Mode=TwoWay}" FontSize="20" Grid.Row="1" Grid.Column="0" Margin="10"/>
+        <hc:PasswordBox ShowClearButton="True" ShowEyeButton="True" ShowPassword="False" hc:TitleElement.VerticalAlignment="Center" hc:TitleElement.HorizontalAlignment="Left" hc:TitleElement.Title="密码"  hc:InfoElement.Placeholder="请输入密码" x:Name="txtPwd" hc:InfoElement.TitleWidth="120" hc:InfoElement.TitlePlacement="Left"  FontSize="20" Grid.Row="2" Grid.Column="0" Margin="10"/>
+        <Button Grid.Row="3" Grid.Column="0" Background="#2980b9" Width="200" Height="50" Content="登录" FontSize="20" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=txtPwd}"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="注册" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <hc:TextBox hc:TitleElement.VerticalAlignment="Center" hc:TitleElement.HorizontalAlignment="Left" hc:TitleElement.Title="用户名"  hc:InfoElement.Placeholder="请输入用户名" hc:InfoElement.TitleWidth="120" hc:InfoElement.TitlePlacement="Left" Text="{Binding RegisterUserName ,Mode=TwoWay}" FontSize="20" Grid.Row="1" Grid.Column="1" Margin="10"/>
+        <hc:TextBox hc:TitleElement.VerticalAlignment="Center" hc:TitleElement.HorizontalAlignment="Left" hc:TitleElement.Title="密码" hc:InfoElement.Placeholder="大写小写数字8-16位" hc:InfoElement.TitleWidth="120" hc:InfoElement.TitlePlacement="Left" Text="{Binding RegisterPassWord,Mode=TwoWay}" FontSize="20" Grid.Row="2" Grid.Column="1" Margin="10"/>
+        <hc:TextBox hc:TitleElement.VerticalAlignment="Center" hc:TitleElement.HorizontalAlignment="Left" hc:TitleElement.Title="邮箱" hc:InfoElement.Placeholder="请输入邮箱" hc:InfoElement.TitleWidth="120" hc:InfoElement.TitlePlacement="Left" Text="{Binding RegisterEmail,Mode=TwoWay}" FontSize="20" Grid.Row="3" Grid.Column="1" Margin="10"/>
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" >
+            <hc:TextBox hc:TitleElement.VerticalAlignment="Center" hc:TitleElement.HorizontalAlignment="Left" hc:TitleElement.Title="验证码" hc:InfoElement.Placeholder="请输入验证码" hc:InfoElement.TitleWidth="120" hc:InfoElement.TitlePlacement="Left" Text="{Binding RegisterVerification,Mode=TwoWay}" FontSize="20" Width="350" Margin="10"/>
+            <Button Content="获取验证码" FontSize="16" Width="100" Height="50" Command="{Binding GetVerificationCommand}"/>
         </StackPanel>
-        <hc:RunningBlock Content="欢迎来到" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Width="500"/>
+
+        <hc:TextBox hc:TitleElement.VerticalAlignment="Center" hc:TitleElement.HorizontalAlignment="Left" hc:TitleElement.Title="用户权限码" hc:InfoElement.Placeholder="请输入用户权限码" hc:InfoElement.TitleWidth="120" hc:InfoElement.TitlePlacement="Left" Text="{Binding RegisterPermissions,Mode=TwoWay}" FontSize="20" Grid.Row="5" Grid.Column="1" Margin="10"/>
+        <Button Grid.Row="6" Grid.Column="1" Background="#27ae60" Width="200" Height="50" Content="注册" FontSize="20" Command="{Binding RegisterCommand}" />
+
+        <hc:RunningBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding Message}" FontSize="20" AutoReverse="False"/>
     </Grid>
 </Window>

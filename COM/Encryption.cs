@@ -14,12 +14,12 @@ public class Encryption
     /// <param name="key"></param>
     /// <param name="iv"></param>
     /// <returns></returns>
-    public static byte[] Encrypt(string plainText, byte[] key, byte[] iv)
+    public static byte[] Encrypt(string plainText)
     {
         using (Aes aesAlg = Aes.Create())
         {
-            aesAlg.Key = key;
-            aesAlg.IV = iv;
+            aesAlg.Key = Encoding.UTF8.GetBytes("ZD25EC7F4692ACD4"); 
+            aesAlg.IV = Encoding.UTF8.GetBytes("ZD25EC7F4692ACD4");
 
             ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
 
@@ -43,12 +43,12 @@ public class Encryption
     /// <param name="key"></param>
     /// <param name="iv"></param>
     /// <returns></returns>
-    public static string Decrypt(byte[] cipherText, byte[] key, byte[] iv)
+    public static string Decrypt(byte[] cipherText)
     {
         using (Aes aesAlg = Aes.Create())
         {
-            aesAlg.Key = key;
-            aesAlg.IV = iv;
+            aesAlg.Key = Encoding.UTF8.GetBytes("ZD25EC7F4692ACD4");
+            aesAlg.IV = Encoding.UTF8.GetBytes("ZD25EC7F4692ACD4");
 
             ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
 

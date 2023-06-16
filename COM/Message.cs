@@ -9,10 +9,6 @@ namespace ThisIsMyWar.COM
     //消息类
     public class Message
     {
-        public Message()
-        {
-           
-        }
 
         public string Code()
         {

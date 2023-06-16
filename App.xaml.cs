@@ -18,7 +18,7 @@ namespace ThisIsMyWar
     {
         protected override Window CreateShell()
         {
-            return Container.Resolve<IndexMainWindow>();
+            return Container.Resolve<LoginMainWindow>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
